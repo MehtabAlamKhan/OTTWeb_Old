@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/OTTWeb/static/css/main.8f941082.chunk.css",
+    "main.css": "/OTTWeb/static/css/main.c822e08f.chunk.css",
     "main.js": "/OTTWeb/static/js/main.b228bf0f.chunk.js",
     "main.js.map": "/OTTWeb/static/js/main.b228bf0f.chunk.js.map",
     "runtime-main.js": "/OTTWeb/static/js/runtime-main.face77eb.js",
@@ -8,7 +8,7 @@
     "static/js/2.7c155d0f.chunk.js": "/OTTWeb/static/js/2.7c155d0f.chunk.js",
     "static/js/2.7c155d0f.chunk.js.map": "/OTTWeb/static/js/2.7c155d0f.chunk.js.map",
     "index.html": "/OTTWeb/index.html",
-    "static/css/main.8f941082.chunk.css.map": "/OTTWeb/static/css/main.8f941082.chunk.css.map",
+    "static/css/main.c822e08f.chunk.css.map": "/OTTWeb/static/css/main.c822e08f.chunk.css.map",
     "static/js/2.7c155d0f.chunk.js.LICENSE.txt": "/OTTWeb/static/js/2.7c155d0f.chunk.js.LICENSE.txt",
     "static/media/bannerTV.css": "/OTTWeb/static/media/Inconsolata-Bold.2d605563.ttf",
     "static/media/index.css": "/OTTWeb/static/media/Inconsolata-Light.3fc99390.ttf",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.face77eb.js",
     "static/js/2.7c155d0f.chunk.js",
-    "static/css/main.8f941082.chunk.css",
+    "static/css/main.c822e08f.chunk.css",
     "static/js/main.b228bf0f.chunk.js"
   ]
 }
