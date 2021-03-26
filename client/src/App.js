@@ -20,7 +20,7 @@ function App() {
       <Router>
         <>
           {/* <VideoPlayer /> */}
-          <HomeScreen />
+          {/* <HomeScreen /> */}
           <Route path="/" exact component={HomeScreen} />
           <Route path="/tv/:id" component={TVShowScreen} />
           <Route path="/movie/:id" component={MovieScreen} />
