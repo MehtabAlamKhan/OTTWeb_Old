@@ -1,0 +1,112 @@
+.tv-season-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+  margin-bottom: 50px;
+  min-width: 851px;
+}
+
+.tv-season-cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+}
+
+.tv-season-title {
+  color: white;
+  font-family: monospace;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.tv-season-row-cont {
+  max-width: 100%;
+}
+
+.tv-season-each-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.tv-season-each-cont::-webkit-scrollbar {
+  display: none;
+}
+
+.each-season {
+  height: 370px;
+}
+
+.tv-season-image {
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  max-height: 300px;
+  margin-right: 15px;
+}
+
+.tv-season-details-cont {
+  position: relative;
+  top: 4px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: custom;
+}
+
+.season-name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.number-of-ep {
+  position: relative;
+  top: 2px;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.release-date {
+  position: relative;
+  top: 2px;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=season.css.map */

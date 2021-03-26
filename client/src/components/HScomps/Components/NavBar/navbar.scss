@@ -1,0 +1,79 @@
+.nav-bar {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+  min-width: 600px;
+  width: 100%;
+  transition: all 300ms ease-in-out;
+  z-index: 10;
+}
+.nav-black {
+  background-color: black;
+}
+.logo-cont {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 140px;
+  height: 40px;
+  // width: 180px;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: rgba(92, 92, 92, 0.376);
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.net-logo {
+  height: 30px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+.net-logo:hover {
+  filter: brightness(1.1);
+  // color: #444444;
+}
+.nav-items {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 20px;
+  margin-left: 10px;
+  height: 100%;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 200ms ease-in-out;
+}
+.nav-item:hover {
+  background-color: rgb(53, 53, 53);
+  filter: brightness(1.15);
+}
+.profile-pic {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+.nav-name {
+  position: relative;
+  height: 100%;
+  color: white;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  cursor: default;
+}

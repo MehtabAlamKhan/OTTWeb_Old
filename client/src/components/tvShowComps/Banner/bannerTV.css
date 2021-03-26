@@ -1,0 +1,369 @@
+@font-face {
+  src: url("./Inconsolata-Bold.ttf");
+  font-family: custom;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tv-screen-banner-cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 550px;
+  width: 100%;
+  min-width: 851px;
+}
+
+.tv-screen-banner {
+  top: 0px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 550px;
+  z-index: -10;
+}
+
+.tv-screen-poster-cont {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 550px;
+  width: 100%;
+  z-index: -9;
+  background-color: rgba(17, 15, 27, 0.822);
+}
+
+.details-cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 90%;
+  height: 90%;
+}
+
+.details-cont a {
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+  height: 360px;
+}
+
+.tv-poster-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 40px;
+  margin-top: 65px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.tv-poster-cont a {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 2px solid #d11414;
+  border-radius: 3px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.poster {
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  max-height: 365px;
+}
+
+.tv-show-home-page {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-family: custom;
+  font-size: 1.5rem;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  z-index: 10;
+}
+
+.tv-poster-blackout {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+}
+
+#tv-show-home-page:hover ~ #tv-poster-blackout {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: rgba(7, 7, 7, 0.514);
+}
+
+.text-cont {
+  height: 360px;
+  margin-top: 75px;
+  margin-left: 50px;
+  color: #f07731;
+  color: #f1f166;
+  color: #dd2121;
+}
+
+.tv-title {
+  cursor: default;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: monospace;
+  font-size: 3.3rem;
+  background-color: rgba(63, 63, 63, 0.219);
+  border-radius: 3px;
+}
+
+.tv-genre-cont {
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: white;
+  font-family: custom;
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #c7c7c7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.tv-genre {
+  border-right: 2px solid rgba(182, 182, 182, 0.63);
+  text-rendering: geometricPrecision;
+  margin-right: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.tv-run-time {
+  padding-left: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.tv-overview-cont {
+  width: 92%;
+  padding: 10px;
+  color: white;
+  font-family: monospace;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 3px;
+  cursor: default;
+}
+
+.tv-overview-details {
+  margin: 0;
+  margin-top: 10px;
+  padding-right: 10px;
+  font-size: 1rem;
+  max-height: 150px;
+  width: 80%;
+  line-height: 1.2rem;
+  overflow-x: scroll;
+  cursor: default;
+}
+
+.tv-overview-details::-webkit-scrollbar {
+  width: 3px;
+}
+
+.tv-banner-fade {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(rgba(22, 22, 22, 0.507)), to(black));
+  background-image: linear-gradient(180deg, transparent, rgba(22, 22, 22, 0.507), black);
+  bottom: 0;
+  height: 50px;
+}
+
+.tv-banner-buttons-cont {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.tv-banner-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 20px;
+  padding: 8px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: rgba(63, 63, 63, 0.637);
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.tv-banner-icons:hover .icon-tooltiptext {
+  display: contents;
+}
+
+.tv-banner-icons:hover {
+  background-color: rgba(255, 255, 255, 0.438);
+}
+
+.tv-banner-icon-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 25px;
+  max-width: 25px;
+}
+
+.user-score-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 40px;
+}
+
+.user-svg-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#circle {
+  width: 71px;
+  height: 71px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+#circle-percentage {
+  font-family: custom;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.user-score-t {
+  color: white;
+  font-family: custom;
+  font-size: 1.2rem;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=bannerTV.css.map */

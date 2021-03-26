@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f4a00e2.chunk.css",
+    "main.js": "/static/js/main.f6a9ec73.chunk.js",
+    "main.js.map": "/static/js/main.f6a9ec73.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c012fedc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c012fedc.js.map",
+    "static/js/2.4dbd0139.chunk.js": "/static/js/2.4dbd0139.chunk.js",
+    "static/js/2.4dbd0139.chunk.js.map": "/static/js/2.4dbd0139.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6f4a00e2.chunk.css.map": "/static/css/main.6f4a00e2.chunk.css.map",
+    "static/js/2.4dbd0139.chunk.js.LICENSE.txt": "/static/js/2.4dbd0139.chunk.js.LICENSE.txt",
+    "static/media/bannerTV.css": "/static/media/Inconsolata-Bold.2d605563.ttf",
+    "static/media/index.css": "/static/media/Inconsolata-Light.3fc99390.ttf",
+    "static/media/Spinner.66a2fae4.svg": "/static/media/Spinner.66a2fae4.svg",
+    "static/media/bookmark.d65430b5.svg": "/static/media/bookmark.d65430b5.svg",
+    "static/media/facebook.a243bc3e.svg": "/static/media/facebook.a243bc3e.svg",
+    "static/media/favorite.1434ac9a.svg": "/static/media/favorite.1434ac9a.svg",
+    "static/media/insta.82718be6.svg": "/static/media/insta.82718be6.svg",
+    "static/media/play.f405870d.svg": "/static/media/play.f405870d.svg",
+    "static/media/rate.de82f684.svg": "/static/media/rate.de82f684.svg",
+    "static/media/twitter.1fe88dc6.svg": "/static/media/twitter.1fe88dc6.svg",
+    "static/media/youtube.5213846a.svg": "/static/media/youtube.5213846a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c012fedc.js",
+    "static/js/2.4dbd0139.chunk.js",
+    "static/css/main.6f4a00e2.chunk.css",
+    "static/js/main.f6a9ec73.chunk.js"
+  ]
+}
