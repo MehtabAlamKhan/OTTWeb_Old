@@ -263,7 +263,9 @@
   justify-content: center;
   align-items: center;
   top: 40px;
-  overflow: hidden;
+  overflow: hidden;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
+
 }
 .user-error-msg {
   transform: translateY(-110%);
@@ -301,7 +303,8 @@
   justify-content: center;
   align-items: center;
   top: 270px;
-  overflow: hidden;
+  overflow: hidden;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
 }
 .c-pass-error-msg {
   transform: translateY(-110%);
@@ -391,7 +394,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
   top: 115px;
+  
   overflow: hidden;
 }
 .email-error-msg {
@@ -405,7 +411,8 @@
   justify-content: center;
   align-items: center;
   top: 193px;
-  overflow: hidden;
+  overflow: hidden;font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
 }
 .pass-error-msg {
   transform: translateY(-110%);

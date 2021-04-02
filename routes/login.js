@@ -2,7 +2,6 @@ const router = require("express").Router();
 const User = require("../models/users.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const auth = require("../middleware/auth");
 
 router.post("/login", async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
@@ -33,24 +32,6 @@ router.post("/login", async (req, res) => {
     })
     .catch((err) => {
       res.json({ msg: "something went wrong" });
-    });
-});
-
-router.post("/user", auth, async (req, res) => {
-  User.findById(req.user.id)
-    .then((user) => res.json(user))
-    .catch((err) => {
-      res.json({ msg: "error" });
-    });
-});
-
-router.get("/getuser", auth, async (req, res) => {
-
-  User.findById(req.user.id)
-    .select("-password")
-    .then((user) => res.json(user))
-    .catch((err) => {
-      res.json({ msg: "error" });
     });
 });
 

@@ -24,6 +24,7 @@ function Login(props) {
   const [passErrorMessage, setPassErrorMessage] = useState("");
 
   const activeMenu = props.activeMenu;
+  const errorMsg = props.error.msg;
 
   var propTypes = {
     logout: PropTypes.func.isRequired,
@@ -42,29 +43,29 @@ function Login(props) {
     setPassTickStyle({});
   }, [username, password]);
 
-  // useEffect(() => {
-  //   if (props.error.msg) {
-  //     if (props.error.msg === "Password and Username Does not Match") {
-  //       setPassError(true);
-  //       setPassStyle({ border: "2px red solid" });
-  //       setPassErrorMessage(props.error.msg);
-  //       setPassTickStyle({
-  //         transform: "scale(1)",
-  //         backgroundColor: "#ff0000",
-  //       });
-  //       return;
-  //     }
-  //     if (props.error.msg === "User not found") {
-  //       setUserError(true);
-  //       setUserStyle({ border: "2px red solid" });
-  //       setUserErrorMessage("Incorrect Username");
-  //       setUserTickStyle({
-  //         transform: "scale(1)",
-  //         backgroundColor: "#ff0000",
-  //       });
-  //     }
-  //   }
-  // }, []);
+  function loginErrorCheckHandler() {
+
+    if (errorMsg === "Password and Username Does not Match") {
+      setPassError(true);
+      setPassStyle({ border: "2px red solid" });
+      setPassErrorMessage(errorMsg);
+      setPassTickStyle({
+        transform: "scale(1)",
+        backgroundColor: "#ff0000",
+      });
+      return;
+    }
+    if (errorMsg === "User not found") {
+      setUserError(true);
+      setUserStyle({ border: "2px red solid" });
+      setUserErrorMessage(errorMsg);
+      setUserTickStyle({
+        transform: "scale(1)",
+        backgroundColor: "#ff0000",
+      });
+      return;
+    }
+  }
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -146,7 +147,9 @@ function Login(props) {
               </div>
             </div>
           </div>
-          <button className="submit-button" type="submit">
+          <button
+          onClick={loginErrorCheckHandler}
+          className="submit-button" type="submit">
             Login
           </button>
         </form>

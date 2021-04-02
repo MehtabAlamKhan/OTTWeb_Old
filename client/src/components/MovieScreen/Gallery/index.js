@@ -27,7 +27,7 @@ function Index({ movie, tv, movie_id }) {
         }/${movie_id}/images?api_key=d0a6b59ce5d4305ca6cf3e0124eeec2f`
       )
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           setWallpapers(res.data.backdrops);
           setPosters(res.data.posters);
         })
@@ -84,7 +84,7 @@ function Index({ movie, tv, movie_id }) {
                       <Posters
                         key={idx}
                         src={`${baseURL}${poster.file_path}`}
-                        alt="Wallpaper"
+                        alt="Poster"
                       ></Posters>
                     )
                 )}

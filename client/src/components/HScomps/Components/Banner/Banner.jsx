@@ -1,38 +1,43 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+
 import "./banner.css";
 import axios from "../../../axios";
 import { HomeRequests } from "../../../Requests";
 import { Link } from "react-router-dom";
 import Play from "../../../../icons/play.svg";
 import Bookmark from "../../../../icons/bookmark.svg";
+import { bookmark, deleteBookmark } from "./../../../../actions/authAction";
+import LoginRegister from "../login/LoginRegister";
 
 var timer;
 
-function Banner() {
+function Banner(props) {
   const [movies, setMovies] = useState([]);
-  const [allMovies, setAllMovies] = useState([]);
+  const [openLogin, setOpenLogin] = useState(false);
 
   const [index, setIndex] = useState(0);
   const [transform, setTransform] = useState(0);
+
+  const bookmarks = props.user?.bookmarks;
+
+  const [isBookMarked, setIsBookMarked] = useState(false);
+
+  var bks = [];
 
   useEffect(() => {
     async function fetchData() {
       const req = await axios.get(HomeRequests.fetchNetflixOriginals);
       function setM() {
-        // setMovies(
-        //   req.data.results[
-        //     Math.floor(Math.random() * req.data.results.length - 1)
-        //   ]
-        // );
         setMovies(req.data.results);
       }
       if (movies.length === 0) {
         setM();
       }
-      setAllMovies(req.data.results);
       return req;
     }
     fetchData();
+    return () => {};
   }, []);
 
   useEffect(() => {
@@ -41,16 +46,27 @@ function Banner() {
         loopSlider();
       }, 5000);
     }
+    return () => {};
   }, [movies]);
 
   useEffect(() => {
+    if (index !== 0) setIsBookMarked(false);
     if (index === movies.length) {
       setIndex(0);
       setTransform(0);
     } else {
       transformSlider(index);
     }
+    return () => {};
   }, [index]);
+
+  useEffect(() => {
+    bookmarks?.map((bk) => {
+      if (bk?.id === movies[index]?.id && bk?.media_type === "tv") {
+        setIsBookMarked(true);
+      }
+    });
+  }, [bookmarks, index, movies]);
 
   function loopSlider() {
     setIndex((index) => setIndex(index + 1));
@@ -64,6 +80,14 @@ function Banner() {
     setTransform(idx * 100);
   }
 
+  function redirectHandler() {
+    if (!props.isAuthenticated) {
+      return (
+        <LoginRegister openLogin={openLogin} setOpenLogin={setOpenLogin} />
+      );
+    }
+  }
+
   return (
     <div className="bannerContainer">
       <div className="bgImageCont">
@@ -73,7 +97,7 @@ function Banner() {
               key={idx}
               className="bgImage"
               style={{
-                resize: "both",
+                // resize: "both",
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 backgroundImage: `url("https://image.tmdb.org/t/p/w200/${movie?.backdrop_path}")`,
@@ -118,7 +142,30 @@ function Banner() {
                       title="Play"
                     ></img>
                   </div>
-                  <div className="buttons">
+                  <div
+                    onLoad={(e) => {}}
+                    style={{
+                      backgroundColor: isBookMarked ? "white" : "",
+                    }}
+                    onClick={() => {
+                      redirectHandler();
+                      if (props.isAuthenticated) {
+                        if (!isBookMarked) {
+                          props.bookmark({ id: movie.id, media_type: "tv" });
+                        }
+                        if (isBookMarked) {
+                          props.deleteBookmark({
+                            id: movie.id,
+                            media_type: "tv",
+                          });
+                        }
+                        setIsBookMarked((isBookMarked) =>
+                          setIsBookMarked(!isBookMarked)
+                        );
+                      }
+                    }}
+                    className="buttons"
+                  >
                     <img
                       className="my-list"
                       src={Bookmark}
@@ -128,7 +175,7 @@ function Banner() {
                   </div>
                 </div>
                 <h3 className="banner-description">
-                  {truncate(`${movie?.overview}`, 150)}
+                  {truncate(`${movie?.overview}`, 160)}
                 </h3>
               </div>
             </header>
@@ -141,7 +188,7 @@ function Banner() {
               onClick={() => {
                 setIndex(idx);
                 transformSlider(idx);
-                clearInterval(timer, () => console.log("cleared"));
+                clearInterval(timer);
               }}
               key={idx}
               className={`navigationCircles ${
@@ -156,4 +203,10 @@ function Banner() {
   );
 }
 
-export default Banner;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user,
+  error: state.error,
+});
+
+export default connect(mapStateToProps, { bookmark, deleteBookmark })(Banner);

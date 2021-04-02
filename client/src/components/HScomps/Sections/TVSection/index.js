@@ -1,6 +1,7 @@
 import React from "react";
 import { TVRequests } from "../../../Requests";
 import Row from "../../Components/Row/Row";
+import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider";
 
 function index() {
   return (
@@ -17,12 +18,12 @@ function index() {
         isLargeRow
         md_tv
       />
-      <Row
-        title="POPULAR"
-        fetchUrl={TVRequests.fetchPopularTV}
+      <VerticalSlider
         md_tv
-        isLargeRow
+        fetchUrl={TVRequests.fetchPopularTV}
+        title="POPULAR"
       />
+
       <Row
         title="TOP RATED"
         fetchUrl={TVRequests.fetchTopRatedTV}

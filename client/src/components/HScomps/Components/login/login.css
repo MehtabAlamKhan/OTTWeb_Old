@@ -379,6 +379,8 @@
           align-items: center;
   top: 40px;
   overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
 }
 
 .user-error-msg {
@@ -441,6 +443,8 @@
           align-items: center;
   top: 270px;
   overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
 }
 
 .c-pass-error-msg {
@@ -581,6 +585,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
   top: 115px;
   overflow: hidden;
 }
@@ -605,6 +611,8 @@
           align-items: center;
   top: 193px;
   overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.7rem;
 }
 
 .pass-error-msg {

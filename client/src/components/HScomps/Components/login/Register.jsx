@@ -118,7 +118,7 @@ function Register(props) {
       setEmailStyle({
         border: "2px #47ce12 solid",
       });
-      axios
+       axios
         .post("http://localhost:5000/api/users", {
           email: email,
         })

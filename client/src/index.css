@@ -3,10 +3,17 @@
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
-@font-face{
-  src: url("./components/MovieScreen/RightBox/Inconsolata-Light.ttf");
+@font-face {
+  src: url("./fonts//Inconsolata-Bold.ttf");
+  font-family: custom;
+}
+@font-face {
+  src: url("./fonts/RobotoMono-Light.ttf");
   font-family: customThin;
- 
+}
+@font-face{
+  src: url("./fonts/Inconsolata-Light.ttf");
+  font-family: InconsolataThin;
 }
 
 body {
@@ -25,10 +32,9 @@ body {
 }
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  
   background: rgba(255, 0, 0, 0.8);
 }
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar-corner {
   display: none;
 }
 

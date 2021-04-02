@@ -7,7 +7,7 @@ export const FooterWrapper = styled.footer`
   // justify-content: center;
   align-items: center;
   padding-top: 50px;
-  height: 300px;
+  height: 350px;
   width: 100%;
   background-color: rgba(27, 27, 27, 0.7);
   font-family: customThin;
@@ -28,11 +28,12 @@ export const Row = styled.div`
 `;
 export const Link = styled.a`
   font-family: customThin;
-  color: rgb(140, 140, 140);
+  color: rgb(200, 200, 200);
   text-decoration: none;
   margin-bottom: 15px;
+  font-size: 0.9rem;
   transition: all 100ms ease-in-out;
-  \ &:hover {
+  &:hover {
     color: white;
   }
 `;
@@ -88,5 +89,5 @@ export const BottomDetails = styled.div`
   padding-top: 5px;
   padding-left: 50px;
   padding-right: 50px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 `;

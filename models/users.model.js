@@ -23,6 +23,26 @@ const userSchema = new Schema(
       max: 255,
       unique: true,
     },
+    bookmarks: {
+      type: Array,
+      default: [],
+      required: false,
+      // unique: true,
+      // sparse: true,
+    },
+    favorites: {
+      type: Array,
+      default: [],
+      require: false,
+      // unique: true,
+      // sparse: true,
+    },
+    phoneNumber: {
+      type: Number,
+      required: false,
+      dafault: null,
+      
+    },
   },
   {
     timestamps: true,

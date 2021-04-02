@@ -1,5 +1,4 @@
 import axios from "axios";
-import { IoReturnUpBack } from "react-icons/io5";
 import { returnErrors, clearErrors } from "./errorAction";
 import {
   USER_LOADED,
@@ -11,13 +10,19 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   CLEAR_ERRORS,
+  FAVORITE_ADDED,
+  FAVORITE_DELETED,
+  BOOKMARK_SUCCESS,
+  BOOKMARK_DELETED,
 } from "./types";
+
+const baseurl = "http://localhost:5000/";
 
 export const loaduser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get("api/user/getuser", tokenConfig(getState))
+    .get(`${baseurl}api/getuser`, tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -45,7 +50,7 @@ export const login = ({ username, password }) => (dispatch) => {
   const body = JSON.stringify({ username, password });
 
   axios
-    .post("api/user/login", body, config)
+    .post(`${baseurl}api/user/login`, body, config)
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -54,6 +59,7 @@ export const login = ({ username, password }) => (dispatch) => {
       dispatch({
         type: CLEAR_ERRORS,
       });
+      window.location.reload();
     })
     .catch((err) => {
       dispatch(
@@ -74,7 +80,7 @@ export const register = ({ username, email, password }) => (dispatch) => {
   const body = JSON.stringify({ username, email, password });
 
   axios
-    .post("/api/user/register", body, config)
+    .post(`${baseurl}api/user/register`, body, config)
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -96,6 +102,77 @@ export const logout = () => {
   return {
     type: LOGOUT_SUCCESS,
   };
+};
+
+export const bookmark = ({ id, media_type }) => (dispatch, getState) => {
+  axios
+    .post(
+      `${baseurl}api/user/bookmarks`,
+      { id, media_type },
+      tokenConfig(getState)
+    )
+    .then((res) => {
+      dispatch({
+        type: BOOKMARK_SUCCESS,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const deleteBookmark = ({ id, media_type }) => (dispatch, getState) => {
+  const config = tokenConfig(getState);
+  config.data = { id, media_type };
+  axios
+    .delete(`${baseurl}api/user/bookmarks`, config)
+    .then((res) => {
+      dispatch({
+        type: BOOKMARK_DELETED,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const favorite = ({ id, media_type }) => (dispatch, getState) => {
+  console.log("favorite called");
+  axios
+    .post(
+      `${baseurl}api/user/favorites`,
+      { id, media_type },
+      tokenConfig(getState)
+    )
+    .then((res) => {
+      dispatch({
+        type: FAVORITE_ADDED,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+export const deleteFavorite = ({ id, media_type }) => (dispatch, getState) => {
+  console.log("delete favorite called");
+
+  const config = tokenConfig(getState);
+  config.data = { id, media_type };
+  axios
+    .delete(`${baseurl}api/user/favorites`, config)
+    .then((res) => {
+      dispatch({
+        type: FAVORITE_DELETED,
+        payload: res.data,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const tokenConfig = (getState) => {

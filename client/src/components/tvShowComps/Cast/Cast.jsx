@@ -13,7 +13,7 @@ function Cast({ tv_id }) {
   // console.log(casts[0].roles[0].character);
 
   useEffect(() => {
-    console.log("fetch data called");
+    // console.log("fetch data called");
     async function fetchData() {
       const req = await Axios.get(
         `https://api.themoviedb.org/3/tv/${tv_id}/credits?api_key=d0a6b59ce5d4305ca6cf3e0124eeec2f&language=en-US`
@@ -22,13 +22,13 @@ function Cast({ tv_id }) {
         const req = await Axios.get(
           `https://api.themoviedb.org/3/tv/${tv_id}/aggregate_credits?api_key=d0a6b59ce5d4305ca6cf3e0124eeec2f&language=en-US`
         );
-        console.log(req);
+        // console.log(req);
         setCast(req.data.cast);
         setCrew(req.data.crew);
       } else {
         setCast(req.data.cast);
         setCrew(req.data.crew);
-        console.log(req.data.cast);
+        // console.log(req.data.cast);
       }
 
       return req;

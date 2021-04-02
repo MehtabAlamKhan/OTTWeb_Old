@@ -19,24 +19,27 @@ export default function index() {
         isLargeRow
         md_tv
       />
-      <VerticalSlider />
+      <VerticalSlider
+        title="TRENDING NOW"
+        fetchUrl={HomeRequests.fetchTrending}
+      />
       <Row
         title="TOP RATED TV SHOWS"
         fetchUrl={HomeRequests.fetchTopRated}
         md_tv
       />
 
-      <Row title="TRENDING NOW" fetchUrl={HomeRequests.fetchTrending} />
+      {/* <Row title="TRENDING NOW" fetchUrl={HomeRequests.fetchTrending} /> */}
       <Row
         title="POPULAR MOVIES"
         fetchUrl={HomeRequests.fetchPopularMovies}
         md_movie
       />
-      <Row
+      {/* <Row
         title="ACTION MOVIES"
         fetchUrl={HomeRequests.fetchActionMovies}
         md_movie
-      />
+      /> */}
       <Row
         title="COMEDY MOVIES"
         fetchUrl={HomeRequests.fetchComedyMovies}

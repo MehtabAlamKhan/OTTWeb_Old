@@ -27,7 +27,6 @@ function HomeScreen() {
 
   return (
     <>
-      <NavBar />
       <Banner />
       <SectionNavBar
         selectedSection={selectedSection}

@@ -1,16 +1,37 @@
 import { useState, useEffect } from "react";
 import "./bannerTV.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
 import UserScore from "./UserScore";
 import Play from "../../../icons/play.svg";
-import Favorite from "../../../icons/favorite.svg";
+import Favorite from "../../../icons/favorite.png";
 import Rate from "../../../icons/rate.svg";
-import Bookmark from "../../../icons/bookmark.svg";
+import BookmarkIcon from "../../../icons/bookmark.svg";
+import {
+  bookmark,
+  deleteBookmark,
+  favorite,
+  deleteFavorite,
+} from "../../../actions/authAction";
 
-function Banner({ showDetails }) {
-  // console.log(showDetails);
+function Banner({
+  showDetails,
+  user,
+  bookmark,
+  deleteBookmark,
+  deleteFavorite,
+  favorite,
+  isAuthenticated,
+}) {
+  // console.log(user);
   const [runTime, setRunTime] = useState();
   const [showHomePage, setShowHomePage] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const bookmarks = user?.bookmarks;
+  const favorites = user?.favorites;
 
   const genres = showDetails.genres;
 
@@ -19,6 +40,23 @@ function Banner({ showDetails }) {
       setRunTime(showDetails.episode_run_time[0]);
     }
   }, [showDetails]);
+
+  useEffect(() => {
+    console.log(bookmarks);
+    bookmarks?.map((bk) => {
+      if (bk.id === showDetails.id && bk.media_type === "tv") {
+        setIsBookmarked(true);
+      }
+    });
+  }, [bookmarks, showDetails]);
+
+  useEffect(() => {
+    favorites?.map((f) => {
+      if (f.id === showDetails.id && f.media_type === "tv") {
+        setIsFavorite(true);
+      }
+    });
+  }, [favorites, showDetails]);
 
   return (
     <>
@@ -79,10 +117,72 @@ function Banner({ showDetails }) {
               {showDetails.vote_average !== 0 && (
                 <UserScore score={showDetails.vote_average} />
               )}
-              <TVButtons src={Play} alt={"Play"} />
-              <TVButtons src={Favorite} alt={"Favorite"} />
-              <TVButtons src={Bookmark} alt={"Bookmark"} />
-              <TVButtons src={Rate} alt={"Rate"} />
+              <div className="tv-banner-icons">
+                <img
+                  className="tv-banner-icon-img"
+                  src={Play}
+                  alt="Play"
+                  title="Play"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  if (isAuthenticated) {
+                    setIsFavorite((isFavorite) => setIsFavorite(!isFavorite));
+                    if (isFavorite) {
+                      deleteFavorite({ id: showDetails.id, media_type: "tv" });
+                    }
+                    if (!isFavorite) {
+                      favorite({ id: showDetails.id, media_type: "tv" });
+                    }
+                  }
+                }}
+                className="tv-banner-icons"
+                style={{
+                  backgroundColor: isFavorite ? "white" : "",
+                }}
+              >
+                <img
+                  className="tv-banner-icon-img"
+                  src={Favorite}
+                  alt="Favorite"
+                  title="Favorite"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  if (isAuthenticated) {
+                    setIsBookmarked((isBookmarked) =>
+                      setIsBookmarked(!isBookmarked)
+                    );
+                    if (isBookmarked) {
+                      deleteBookmark({ id: showDetails.id, media_type: "tv" });
+                    }
+                    if (!isBookmarked) {
+                      bookmark({ id: showDetails.id, media_type: "tv" });
+                    }
+                  }
+                }}
+                className="tv-banner-icons"
+                style={{
+                  backgroundColor: isBookmarked ? "white" : "",
+                }}
+              >
+                <img
+                  className="tv-banner-icon-img"
+                  src={BookmarkIcon}
+                  alt="Bookmark"
+                  title="Bookmark"
+                />
+              </div>
+              <div className="tv-banner-icons">
+                <img
+                  className="tv-banner-icon-img"
+                  src={Rate}
+                  alt="Rate"
+                  title="Rate"
+                />
+              </div>
             </div>
             <div className="tv-overview-cont">
               <h1 className="tv-overview-title">OverView</h1>
@@ -99,19 +199,15 @@ function Banner({ showDetails }) {
   );
 }
 
-function TVButtons(props) {
-  return (
-    <>
-      <div className="tv-banner-icons">
-        <img
-          className="tv-banner-icon-img"
-          src={props.src}
-          alt={props.alt}
-          title={props.alt}
-        />
-      </div>
-    </>
-  );
-}
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  user: state.auth.user,
+  error: state.error,
+});
 
-export default Banner;
+export default connect(mapStateToProps, {
+  bookmark,
+  deleteBookmark,
+  favorite,
+  deleteFavorite,
+})(Banner);

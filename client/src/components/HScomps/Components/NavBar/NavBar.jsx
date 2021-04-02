@@ -6,10 +6,13 @@ import LoginRegister from "../login/LoginRegister";
 import { Link } from "react-router-dom";
 import Logo1 from "../../../../icons/logo 1.png";
 import Logo2 from "../../../../icons/logo 2.png";
+import NavBarDrop from "./NavBarDrop";
 
 function NavBar(props) {
   const [dark, setDark] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
+
+  const [showDropSown, setShowDropDown] = useState(false);
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -43,7 +46,11 @@ function NavBar(props) {
           <div className="nav-name">Welcome Guest</div>
         )}
 
-        <NavItems profile={true} />
+        <NavItems
+          showDropSown={showDropSown}
+          setShowDropDown={setShowDropDown}
+          profile={true}
+        />
         <NavItems donate />
         {!props.isAuthenticated && (
           <NavItems login setOpenLogin={setOpenLogin} />
@@ -57,8 +64,14 @@ function NavBar(props) {
 }
 
 function NavItems(props) {
+  const setShowDropDown = props.setShowDropDown;
+  const showDropSown = props.showDropSown;
   return (
-    <div className="nav-items">
+    <div
+      onMouseEnter={() => props.profile && setShowDropDown(true)}
+      onMouseLeave={() => props.profile && setShowDropDown(false)}
+      className="nav-items"
+    >
       <div className="nav-item">
         {props.profile && (
           <img
@@ -67,6 +80,8 @@ function NavItems(props) {
             alt="Profile"
           />
         )}
+        {props.profile && <NavBarDrop showDropSown={showDropSown} setShowDropDown={setShowDropDown} />}
+
         {props.donate && (
           <img
             className="profile-pic"

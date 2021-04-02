@@ -17,7 +17,7 @@ function TVShowScreen({ match }) {
 
   useEffect(() => {
     async function fetchDatas() {
-      console.log("fetch data called");
+      // console.log("fetch data called");
       await Axios.get(url)
         .then((req) => {
           // console.log(req);
@@ -26,7 +26,8 @@ function TVShowScreen({ match }) {
           // console.log(genres);
         })
         .catch((err) => {
-          console.log(err);
+          throw err;
+          // console.log(err);
         });
     }
     fetchDatas();
@@ -41,7 +42,6 @@ function TVShowScreen({ match }) {
 
   return (
     <div>
-      <NavBar />
       <Banner showDetails={showDetails} />
 
       <Seasons showDetails={showDetails} />

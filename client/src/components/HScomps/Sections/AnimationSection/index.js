@@ -1,6 +1,7 @@
 import React from "react";
 import { AnimatedRequests } from "../../../Requests";
 import Row from "../../Components/Row/Row";
+import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider";
 
 function index() {
   return (
@@ -11,12 +12,13 @@ function index() {
         isLargeRow
         md_movie
       />
-      <Row
+
+      <VerticalSlider
+        md_movie
         title="JAPANESE"
         fetchUrl={AnimatedRequests.fetchJapanese}
-        md_movie
-        isLargeRow
       />
+
       <Row
         title="COMING SOON"
         fetchUrl={AnimatedRequests.fetchLatest}

@@ -60,7 +60,6 @@ function MovieScreen({ match }) {
 
   return (
     <>
-      <NavBar />
       <Banner
         showDetails={showDetails}
         setShowPlayer={setShowPlayer}

@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieRequests } from "../../../Requests";
 import Row from "../../Components/Row/Row";
+import VerticalSlider from "../../Components/VerticalSlider/VerticalSlider";
 
 function index() {
   return (
@@ -11,12 +12,12 @@ function index() {
         isLargeRow
         md_movie
       />
-      <Row
-        title="TOP RATED MOVIES"
+      <VerticalSlider
         fetchUrl={MovieRequests.fetchTopRatedMovies}
-        isLargeRow
         md_movie
+        title="TOP RATED MOVIES"
       />
+
       <Row
         title="NOW PLAYING"
         fetchUrl={MovieRequests.fetchNowPlayingMovies}
