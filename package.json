@@ -1,12 +1,11 @@
 { 
-  "homepage": "https://mehtabalamkhan.github.io/OTTWeb", 
   "name": "server",
   "version": "1.0.0",
   "description": "server",
   "main": "server.js",
   "scripts": {
-    "predeploy": "cd client && npm run build",
-    "deploy": "cd client && gh-pages -d build",
+    "predeploy": "cd client && npm run predeploy",
+    "deploy": "cd client && npm run deploy",
     "client": "cd client && npm start",
     "start": "concurrently \"npm run client\" \"npm run dev\"",
     "dev": "nodemon server.js"
