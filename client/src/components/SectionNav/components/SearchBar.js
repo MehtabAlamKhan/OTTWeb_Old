@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 
 import { Link } from "react-router-dom";
 import { Input } from "../styles/SectionNavBar";
@@ -194,12 +194,12 @@ function SearchBar() {
         }}
         style={{ cursor: "pointer" }}
       >
-        <Lottie
+        {/* <Lottie
           isClickToPauseDisabled={true}
           options={defaultOptions}
           height={30}
           width={30}
-        />
+        /> */}
       </div>
     </>
   );

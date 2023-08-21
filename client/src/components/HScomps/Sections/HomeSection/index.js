@@ -8,7 +8,7 @@ export default function index() {
   return (
     <>
       <Row
-        title="NETFLIX ORIGINALS"
+        title="MAK ORIGINALS"
         fetchUrl={HomeRequests.fetchNetflixOriginals}
         isLargeRow
         md_tv

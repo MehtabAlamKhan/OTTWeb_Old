@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./login.css";
 // import axios from "axios";
 import { CSSTransition } from "react-transition-group";
-import { BsCheck, BsX } from "react-icons/all";
+import { BsCheck, BsX } from "react-icons/bs";
 import { PropTypes } from "prop-types";
 import { connect } from "react-redux";
 import { login } from "../../../../actions/authAction.js";

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./login.css";
 // import axios from "axios";
 // import { CSSTransition } from "react-transition-group";
-import { FiLogIn } from "react-icons/all";
+import { FiLogIn } from "react-icons/fi";
 import Register from "./Register";
 import Login from "./Login";
 import { connect } from "react-redux";

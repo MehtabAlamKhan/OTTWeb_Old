@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { BsCheck, BsX } from "react-icons/all";
+import { BsCheck, BsX } from "react-icons/bs";
 import "./login.css";
 import axios from "axios";
 import { CSSTransition } from "react-transition-group";

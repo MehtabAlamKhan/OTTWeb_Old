@@ -16,8 +16,8 @@ function NavBarDrop(props) {
       style={{
         transform: showDropSown
           ? "scale(1) translateX(-45%)"
-          : "scale(1) translateX(-45%)",
-        opacity: showDropSown ? 1 : 1,
+          : "scale(0) translateX(-45%)",
+        opacity: showDropSown ? 1 : 0,
       }}
       className="dropdown-container"
     >

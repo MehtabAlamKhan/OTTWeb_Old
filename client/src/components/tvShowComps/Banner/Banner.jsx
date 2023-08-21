@@ -115,7 +115,7 @@ function Banner({
             </div>
             <div className="tv-banner-buttons-cont">
               {showDetails.vote_average !== 0 && (
-                <UserScore score={showDetails.vote_average} />
+                <UserScore score={parseFloat(showDetails.vote_average).toFixed(1)} />
               )}
               <div className="tv-banner-icons">
                 <img

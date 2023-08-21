@@ -49,7 +49,7 @@ function UserScore({ score }) {
           ></circle>
         </svg>
         <div style={{ position: "absolute" }}>
-          <div id="circle-percentage">{score === 0 ? "NA" : `${score}`}</div>
+          <div id="circle-percentage">{score === 0 ? "NA" : `${parseFloat(score).toFixed(1)}`}</div>
         </div>
       </div>
       <div className="user-score-t">User Score</div>
