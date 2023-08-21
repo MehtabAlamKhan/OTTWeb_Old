@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/OTTWeb/static/css/main.267e2bb2.css",
-    "main.js": "/OTTWeb/static/js/main.8e3c43f5.js",
+    "main.js": "/OTTWeb/static/js/main.48be6238.js",
     "static/css/451.916c8f2a.chunk.css": "/OTTWeb/static/css/451.916c8f2a.chunk.css",
     "static/js/451.eb454d5b.chunk.js": "/OTTWeb/static/js/451.eb454d5b.chunk.js",
     "static/css/885.18f32407.chunk.css": "/OTTWeb/static/css/885.18f32407.chunk.css",
@@ -27,7 +27,7 @@
     "index.html": "/OTTWeb/index.html",
     "static/media/facebook.svg": "/OTTWeb/static/media/facebook.a243bc3e23e06ea3b2b06a6ccf3a60ae.svg",
     "main.267e2bb2.css.map": "/OTTWeb/static/css/main.267e2bb2.css.map",
-    "main.8e3c43f5.js.map": "/OTTWeb/static/js/main.8e3c43f5.js.map",
+    "main.48be6238.js.map": "/OTTWeb/static/js/main.48be6238.js.map",
     "451.916c8f2a.chunk.css.map": "/OTTWeb/static/css/451.916c8f2a.chunk.css.map",
     "451.eb454d5b.chunk.js.map": "/OTTWeb/static/js/451.eb454d5b.chunk.js.map",
     "885.18f32407.chunk.css.map": "/OTTWeb/static/css/885.18f32407.chunk.css.map",
@@ -39,6 +39,6 @@
   },
   "entrypoints": [
     "static/css/main.267e2bb2.css",
-    "static/js/main.8e3c43f5.js"
+    "static/js/main.48be6238.js"
   ]
 }
