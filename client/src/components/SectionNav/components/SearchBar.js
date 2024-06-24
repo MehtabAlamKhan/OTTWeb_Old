@@ -158,9 +158,7 @@ function SearchBar() {
             movies.map(
               (movie, idx) =>
                 movie.poster_path && (
-                  <SearchResults
-                  key={idx}
-                  >
+                  <SearchResults key={idx}>
                     <Link
                       to={`${movie.media_type}/${movie.id}`}
                       style={{

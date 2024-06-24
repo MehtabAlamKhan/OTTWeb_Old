@@ -16,7 +16,7 @@ import {
 
 const initialState = {
   token: localStorage.getItem("xts0"),
-  isAuthenticated: null,
+  isAuthenticated: false,
   isLoading: false,
   user: null,
 };

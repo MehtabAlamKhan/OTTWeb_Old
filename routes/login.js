@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const User = require("../models/users.model");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import express from "express"
+const router = express.Router();import User from "../models/users.model.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 router.post("/login", async (req, res) => {
   const user = await User.findOne({ username: req.body.username });
@@ -35,4 +35,4 @@ router.post("/login", async (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;

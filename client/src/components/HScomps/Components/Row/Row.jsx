@@ -94,6 +94,7 @@ function Row({
         <h2 className={`genre-title ${isLargeRow && "large-title"}`}>
           {title}
         </h2>
+
         <div className="row-posts">
           {movies &&
             movies.map(
@@ -108,7 +109,7 @@ function Row({
                     >
                       <Link
                         target="_blank"
-                        to={`/${
+                        to={`${
                           md_movie
                             ? "movie"
                             : movie.media_type === "movie"

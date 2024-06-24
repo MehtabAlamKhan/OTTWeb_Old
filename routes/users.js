@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const User = require("../models/users.model");
-const auth = require("../middleware/auth");
-const { registerValidation } = require("../userValidations");
+import express from "express"
+const router = express.Router();import User from "../models/users.model.js";
+import auth from "../middleware/auth.js";
+import registerValidation from "../userValidations.js";
 
 router.post("/users", async (req, res) => {
   let msg = "";
@@ -139,4 +139,4 @@ router.get("/getuser", auth, async (req, res) => {
     });
 });
 
-module.exports = router;
+export default router;
