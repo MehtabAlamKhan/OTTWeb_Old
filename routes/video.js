@@ -1,5 +1,6 @@
-const router = require("express").Router();
-const fs = require("fs");
+import express from "express"
+const router = express.Router();
+import fs from "fs";
 
 router.get("/video", function (req, res) {
   // Ensure there is a range given for the video
@@ -43,4 +44,4 @@ router.get("/video", function (req, res) {
   videoStream.pipe(res);
 });
 
-module.exports = router;
+export default router;

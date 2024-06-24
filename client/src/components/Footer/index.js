@@ -45,16 +45,12 @@ export default function Footer() {
       <BottomContainer>
         <ConnectWithUs>Connect With Us</ConnectWithUs>
         <IconCont>
-          <Logo src={Insta}>
-          </Logo>
-          <Logo src={Facebook}>
-          </Logo>
-          <Logo src={Twitter}>
-          </Logo>
-          <Logo src={YouTube}>
-          </Logo>
+          <Logo src={Insta}></Logo>
+          <Logo src={Facebook}></Logo>
+          <Logo src={Twitter}></Logo>
+          <Logo src={YouTube}></Logo>
         </IconCont>
-        <BottomDetails>A MAK Bros Production &copy;</BottomDetails>
+        <BottomDetails>A PROJECT BY MEHTAB ALAM KHAN &copy;</BottomDetails>
       </BottomContainer>
     </FooterWrapper>
   );

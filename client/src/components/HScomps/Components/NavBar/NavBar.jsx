@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { loaduser } from "../../../../actions/authAction";
 
 import "./navbar.css";
 import LoginRegister from "../login/LoginRegister";
@@ -8,11 +9,21 @@ import Logo1 from "../../../../icons/logo 1.png";
 import Logo2 from "../../../../icons/logo 2.png";
 import NavBarDrop from "./NavBarDrop";
 
-function NavBar(props) {
+function NavBar() {
   const [dark, setDark] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
-
   const [showDropSown, setShowDropDown] = useState(false);
+
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.addEventListener("scroll", transitionNavBar);
+    return () => {
+      window.removeEventListener("scroll", transitionNavBar);
+    };
+  }, []);
 
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
@@ -21,13 +32,6 @@ function NavBar(props) {
       setDark(false);
     }
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", transitionNavBar);
-    return () => {
-      window.removeEventListener("scroll", transitionNavBar);
-    };
-  }, []);
 
   return (
     <>
@@ -40,8 +44,8 @@ function NavBar(props) {
             <img className="net-logo" src={Logo2} alt="" />
           </Link>
         </div>
-        {props.isAuthenticated ? (
-          <div className="nav-name">Welcome {props.user.username}</div>
+        {isAuthenticated ? (
+          <div className="nav-name">Welcome {user.username}</div>
         ) : (
           <div className="nav-name">Welcome Guest</div>
         )}
@@ -52,11 +56,9 @@ function NavBar(props) {
           profile={true}
         />
         <NavItems donate />
-        {!props.isAuthenticated && (
-          <NavItems login setOpenLogin={setOpenLogin} />
-        )}
+        {!isAuthenticated && <NavItems login setOpenLogin={setOpenLogin} />}
       </div>
-      {!props.isAuthenticated && openLogin && (
+      {!isAuthenticated && openLogin && (
         <LoginRegister openLogin={openLogin} setOpenLogin={setOpenLogin} />
       )}
     </>
@@ -80,7 +82,12 @@ function NavItems(props) {
             alt="Profile"
           />
         )}
-        {props.profile && <NavBarDrop showDropSown={showDropSown} setShowDropDown={setShowDropDown} />}
+        {props.profile && (
+          <NavBarDrop
+            showDropSown={showDropSown}
+            setShowDropDown={setShowDropDown}
+          />
+        )}
 
         {props.donate && (
           <img
@@ -103,9 +110,4 @@ function NavItems(props) {
   );
 }
 
-const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
-  user: state.auth.user,
-});
-
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

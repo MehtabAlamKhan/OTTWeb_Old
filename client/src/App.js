@@ -1,10 +1,10 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
-import store from "./store";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { loaduser } from "./actions/authAction";
+
+// import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
+import store from "./redux/store";
 import NavBar from "./components/HScomps/Components/NavBar/NavBar";
 
 const TVShowScreen = lazy(() => import("./components/Screens/TVShowScreen"));
@@ -27,7 +27,7 @@ const renderLoader = () => (
 
 function App() {
   useEffect(() => {
-    // console.log("Trying to Load user");
+    // console.log("APP CMP Trying to Load user");
     store.dispatch(loaduser());
   }, []);
 
@@ -39,10 +39,9 @@ function App() {
             {/* <VideoPlayer /> */}
             {/* <HomeScreen /> */}
             <NavBar />
-
-            <Route path="/" exact component={HomeScreen} />
+            {/* <Route path="/OTTWeb" exact component={HomeScreen} />
             <Route path="/tv/:id" component={TVShowScreen} />
-            <Route path="/movie/:id" component={MovieScreen} />
+            <Route path="/movie/:id" component={MovieScreen} /> */}
           </>
         </Router>
       </Suspense>
